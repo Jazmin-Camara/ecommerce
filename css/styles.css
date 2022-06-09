@@ -37,7 +37,8 @@
 }
 
 body{
-    font-family: 'Roboto', sans-serif;;
+    font-family: 'Roboto', sans-serif;
+    background-color: hsl(206, 4%, 97%);
 }
 
 
@@ -110,23 +111,47 @@ input#menu-hamburguesa:checked ~ ul{
 /*Header*/
 
 .home-main{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 80vw 50vw;
+    flex-direction: column;
     justify-content: flex-end;
 }
 
 .home-div{
     background-color: hsl(354, 78%, 60%);
-    width: 70%;
     display: flex;
-    justify-content: center;
+    justify-content: center; 
+    align-items: flex-end;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.text-home{
+    grid-column: 1 / 3;
+    grid-row: 2;
+    justify-content: flex-start;
+    padding: 15px 30px;
+    gap: .5rem;
 }
 
 .home-img{
-    width: 90%;
-    margin-top: 15vh;
+    height:80%;
+    margin-top: 15px;
 }
 
+section>div>h1{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.price-home{
+    color:hsl(354, 78%, 60%);
+    font-weight: bold;
+    font-size: 21px;
+    display: flex;
+    padding: .5rem 0 1.5rem 0;
+}
 
 
 /*botones*/
@@ -152,6 +177,10 @@ input#menu-hamburguesa:checked ~ ul{
     color: white;
     font-weight: bold;
 }
+
+
+/*main*/
+
 
 /*Media queries*/
 
@@ -193,6 +222,24 @@ input#menu-hamburguesa:checked ~ ul{
 
     /*mainhome*/
 
+    .home-main{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    .home-div{
+        background-color: hsl(354, 78%, 60%);
+        width: 70%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .home-img{
+        width: 90%;
+        margin-top: 15vh;
+    }
+
     .text-home{
         display: flex;
         flex-direction: column;
@@ -200,20 +247,10 @@ input#menu-hamburguesa:checked ~ ul{
        justify-content: center;
        align-items: flex-start;
        padding: 0 2rem 0 4rem;
-       gap: .5rem;
     }
 
     section>div>h1{
-        font-weight: bold;
         font-size: 40px;
-    }
-
-    .price-home{
-        color:hsl(354, 78%, 60%);
-        font-weight: bold;
-        font-size: 21px;
-        display: flex;
-        padding: .5rem 0 1.5rem 0;
     }
 
     .home-main{
