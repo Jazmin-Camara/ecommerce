@@ -1,0 +1,240 @@
+/*-------------GOOGLE FONT----------------*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/*
+    COLORES:
+
+    --first-color: hsl(354, 78%, 60%);
+    --button-color: hsl(0, 0%, 17%);
+    --button-color-alt: hsl(0, 0%, 21%);
+    --card-color: hsl(0, 0%, 90%);
+    --title-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 55%);
+    --body-color: hsl(206, 4%, 97%);
+    --container-color: #fff;
+    --border-color: hsl(0, 0%, 94%);
+
+
+    COLORES DARK MODE:
+
+    --first-color: hsl(182, 53%, 74%);
+    --button-color: hsl(246, 16%, 12%);
+    --button-color-alt: hsl(0, 0%, 28%);
+    --card-color: hsla(246, 16%, 5%, .5);
+    --title-color: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 75%);
+    --body-color: hsl(249, 19%, 14%);
+    --container-color: hsl(246, 16%, 12%);
+    --border-color: hsl(0, 0%, 20%);
+*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;;
+}
+
+
+/*NAV*/
+
+nav{
+    display: flex;
+    height: 60px;
+    box-shadow: 0 10px 20px 10px #ddd;
+}
+
+.logo-nav{
+    width: 45px;
+}
+
+.home{
+    color: hsl(354, 78%, 60%);
+    padding: 0 1rem;
+}
+
+.nav1{
+    display: flex;
+    flex-direction: row;
+    width: calc(30% - 80px - 2rem);
+    padding: 0.5 rem 1.5rem;
+    align-items: center;
+    margin-left: 80px;
+    margin-right: 2rem;
+}
+
+.nav2{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    background-color: hsl(354, 78%, 60%);
+    justify-content: flex-end;
+    padding-right: 1.5rem;
+    align-items: center;
+}
+
+
+ul>a{
+    text-decoration: none;
+}
+
+input#menu-hamburguesa{
+    visibility: hidden;
+}
+
+input#menu-hamburguesa ~ ul{
+    background-color: white;
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: calc( 100vh - 60px );
+    top: 60px;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 2rem;
+    display: none;
+    text-transform: uppercase;
+}
+
+input#menu-hamburguesa:checked ~ ul{
+    display: flex;
+}
+
+/*Header*/
+
+.home-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.home-div{
+    background-color: hsl(354, 78%, 60%);
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.home-img{
+    width: 90%;
+    margin-top: 15vh;
+}
+
+
+
+/*botones*/
+
+#botones-home{
+    display: flex;
+    align-items: center;
+}
+
+#discover{
+    padding: 15px 23px;
+    background-color: rgb(175, 170, 170);
+    border-color: rgb(175, 170, 170);
+    float:left;
+}
+
+#add{
+    padding: 20px 25px;
+    background-color: hsl(0, 0%, 17%);
+    border-color: hsl(0, 0%, 17%);
+    margin: 0;
+    float:left;
+    color: white;
+    font-weight: bold;
+}
+
+/*Media queries*/
+
+@media screen and ( min-width:785px ) {
+    /*nav*/
+    label{
+        display: none;
+    }
+
+    input#menu-hamburguesa ~ ul{
+        position: static;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        text-transform: capitalize;
+    }
+
+    .nav1{
+        display: flex;
+        flex-direction: row;
+        width: calc(50% - 80px - 2rem);
+        padding: 0.5 rem 1.5rem;
+        align-items: center;
+        margin-left: 80px;
+        margin-right: 2rem;
+    }
+
+    .nav2{
+        display: flex;
+        flex-direction: row;
+        width: 40%;
+        background-color: hsl(354, 78%, 60%);
+        justify-content: flex-end;
+        padding-right: 1.5rem;
+        align-items: center;
+    }
+
+
+    /*mainhome*/
+
+    .text-home{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+       justify-content: center;
+       align-items: flex-start;
+       padding: 0 2rem 0 4rem;
+       gap: .5rem;
+    }
+
+    section>div>h1{
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    .price-home{
+        color:hsl(354, 78%, 60%);
+        font-weight: bold;
+        font-size: 21px;
+        display: flex;
+        padding: .5rem 0 1.5rem 0;
+    }
+
+    .home-main{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    .home-div{
+        background-color: hsl(354, 78%, 60%);
+        width: 40%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .home-img{
+        width: 90%;
+        margin-top: 15vh;
+    }
+
+    .home3{
+        width: 10%;
+    }
+}
