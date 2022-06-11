@@ -322,6 +322,29 @@ main{
 
 .agregar>a{
     font-size: 25px;
+    color: var(--text-color);
+}
+
+
+footer{
+    background-color: var(--card-color);
+    padding: 80px 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+footer>div>ul{
+    list-style: none;
+    padding: 10px 0;
+}
+
+footer>div{
+    padding: 15px;}
+
+
+footer>div>ul>li{
+    padding: 8px;
 }
 
 
@@ -447,4 +470,10 @@ main{
     }
     
 
+    footer{
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+        padding: 100px 30px;
+    }
 }

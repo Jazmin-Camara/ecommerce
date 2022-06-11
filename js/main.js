@@ -15,3 +15,9 @@ themeIcon.addEventListener( "click", (e) =>{
         themeIcon.classList.replace("bx-sun", "bx-moon")
     }
 })
+
+
+/*Local Storage*/
+/*Creacion de informacion*/
+
+window.localStorage.setItem( "  ")
