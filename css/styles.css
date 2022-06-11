@@ -25,6 +25,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     background-color: var(--body-color);
+    color: var(--title-color);
 }
 
  body.dark-theme{
@@ -39,6 +40,13 @@ body{
     --border-color: hsl(0, 0%, 20%);
 }
 
+a{
+    text-decoration: none; 
+}
+
+header{
+    margin-bottom: 30px;
+}
 
 /*NAV*/
 
@@ -137,7 +145,7 @@ input#menu-hamburguesa:checked ~ ul{
 .home-main{
     display: grid;
     grid-template-columns: 30% 70%;
-    grid-template-rows: 80vw 50vw;
+    grid-template-rows: 80vw 90vh;
     flex-direction: column;
     justify-content: flex-end;
 }
@@ -157,12 +165,15 @@ input#menu-hamburguesa:checked ~ ul{
     justify-content: flex-start;
     padding: 15px 50px;
     margin-top: 15px;
-    color: var(--title-color);
 }
 
 .home-img{
     height:80%;
     margin-top: 15px;
+}
+
+.text-home>p{
+    font-size: 20px;
 }
 
 section>div>h1{
@@ -208,8 +219,133 @@ section>div>h1{
 
 /*main*/
 
+main{
+    margin-top: 15px;
+    color: --title-color;
+}
+
+#btn-group{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 15px;
+    margin: 50px 0;
+}
+
+
+#btn-group>button{
+    padding: 15px 45px;
+    border-top: none;
+    border-bottom: none;
+    border-right: var(--text-color-light);
+    background-color: var(--body-color);
+    color: var(--title-color);
+}
+
+#btn-1{
+    border-left-color: var(--body-color);
+}
+
+#btn-group>button>h2{
+    font-size: 18px;
+}
+
+#btn-group>button>p{
+    font-size: 16px;
+}
+
+/*cards*/
+
+#card-section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 20px;
+}
+
+.card{
+    width: 25vw;
+    height: 35vw;
+    background-color: var(--card-color);
+    margin: 10px;
+    border-radius: 10%;
+    min-width: 230px;
+    min-height: 300px;
+    position: relative;
+}
+
+.card-img{
+    height: 75%;
+    margin-bottom: 10px;
+    background-size: cover;
+}
+
+.card1{
+    background-image: url(../images/featured1.png);
+}
+
+.card2{
+    background-image: url(../images/featured2.png);
+}
+
+.card3{
+    background-image: url(../images/featured3.png);
+}
+
+.card-body{
+    background-color: var(--body-color);
+    height: 25%;
+}
+
+.card-title{
+    font-size: 20px;
+    display: inline-block;
+}
+
+.card>h4{
+    font-size: 18px;
+}
+
+.agregar{
+    display: flex;
+    width: 35px;
+    height: 35px;
+    border: solid var(--text-color-light);
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    bottom: calc(25% - 27px);
+    background-color: var(--card-color);;
+}
+
+.agregar>a{
+    font-size: 25px;
+}
+
+
+
 
 /*Media queries*/
+
+@media screen and ( min-width:355px ) {
+    .home-main{
+        grid-template-rows: 80vw 65vh;
+}
+}
+
+@media screen and ( min-width:375px ) {
+    .home-main{
+        grid-template-rows: 80vw 70vh;
+}
+}
+
+@media screen and ( min-width:390px ) {
+    .home-main{
+        grid-template-rows: 80vw 60vh;
+}
+}
 
 @media screen and ( min-width:785px ) {
     /*nav*/
@@ -282,4 +418,33 @@ section>div>h1{
     .home3{
         width: 10%;
     }
+
+
+    /*main*/
+
+    #btn-group{
+        display: flex;
+        justify-content: center;
+    }
+
+    #btn-group>button>h2{
+        font-size: 25px;
+    }
+
+    .card>h3{
+        font-size: 27px;
+    }
+
+    .agregar{
+        width: 45px;
+        height: 45px;
+        right: 0;
+        bottom: calc(25% - 30px);
+    }
+    
+    .agregar>a{
+        font-size: 25px;
+    }
+    
+
 }
