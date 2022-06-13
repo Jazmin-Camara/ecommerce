@@ -58,6 +58,7 @@ nav{
 
 .logo-nav{
     width: 45px;
+    fill: var(--first-color);
 }
 
 #store{
@@ -91,6 +92,7 @@ nav{
     padding: 0 13%;
     align-items: center;
     z-index: 0;
+    gap: .5rem;
 }
 
 .logo-nav{
@@ -347,7 +349,9 @@ footer>div>ul>li{
     padding: 8px;
 }
 
-
+.fb{
+    width: 20px;
+}
 
 
 /*Media queries*/
@@ -399,7 +403,6 @@ footer>div>ul>li{
         display: flex;
         flex-direction: row;
         width: 40%;
-       
         justify-content: flex-end;
         padding-right: 1.5rem;
         align-items: center;
