@@ -23,27 +23,24 @@ const items = [
   {
     id: 1,
     name: 'Hoodies',
-    price: 14.00,
-    image: 'https://academlo-store.netlify.app/assets/img/featured1.png',
+    price: '$14.00',
     category: 'hoodies',
     quantity: 10
   },
   {
     id: 2,
     name: 'Shirts',
-    price: 24.00,
-    image: 'https://academlo-store.netlify.app/assets/img/featured2.png',
+    price: `$24.00`,
     category: 'shirts',
-    quantity: 15
+    quantity: 10
   },
   {
     id: 3,
     name: 'Sweatshirts',
-    price: 24.00,
-    image: 'https://academlo-store.netlify.app/assets/img/featured3.png',
+    price: `$24.00`,
     category: 'sweatshirts',
-    quantity: 20
-  },
+    quantity: 10
+  }
 ]
 
 
@@ -86,7 +83,7 @@ function mostrarProductos(){
     <div class="card" >
     <div class="card-img card${product.id}" ></div>
     <div class="card-body">
-        <h3 class="card-title">$ ${product.price}.00</h3>
+        <h3 class="card-title">${product.price}</h3>
         <small>stock: ${product.quantity}</small>
         <h4 class="card-text">${product.name}</h4>
             <button data-id="${product.id}" class="product-button agregar">
@@ -178,7 +175,7 @@ function mostrarProductosCart(){
           <small>Cantidad: ${item.quantitySelected}</small>
       </div>
       `
-      console.log(item.image)
+
       let totalProducto = item.quantitySelected * item.price 
       suma += totalProducto
 
