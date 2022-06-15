@@ -14,7 +14,27 @@ themeIcon.addEventListener( "click", (e) =>{
     }else{
         themeIcon.classList.replace("bx-sun", "bx-moon")
     }
+
+
+    //guardo en local dark theme
+  if(isDark)
+  {
+    localStorage.setItem('dark-mode', 'true')
+  }else{
+    localStorage.setItem('dark-mode', 'false')
+  }
+
 })
+
+if(localStorage.getItem('dark-mode') === 'true'){
+  document.body.classList.add('dark-theme')
+  themeIcon.classList.add("bx-moon", "bx-sun")
+}else{
+  document.body.classList.remove('dark-theme')
+}
+
+
+
 
 
 /*add products*/
