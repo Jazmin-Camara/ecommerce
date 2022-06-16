@@ -4,38 +4,30 @@
 let themeIcon = document.getElementById("theme-toggler")
 let body = document.querySelector("body")
 
+console.log(localStorage.getItem("isDark"))
+    
+
 themeIcon.addEventListener( "click", (e) =>{
     body.classList.toggle("dark-theme")
     
     let isDark = body.classList.contains("dark-theme")
 
     if(isDark){
-        themeIcon.classList.replace("bx-moon", "bx-sun")
+      themeIcon.classList.replace("bx-moon", "bx-sun")
+      localStorage.setItem("darkMode","true")
     }else{
         themeIcon.classList.replace("bx-sun", "bx-moon")
+        localStorage.setItem("darkMode","false")
     }
-
-
-    //guardo en local dark theme
-  if(isDark)
-  {
-    localStorage.setItem('dark-mode', 'true')
-  }else{
-    localStorage.setItem('dark-mode', 'false')
-  }
-
+    
 })
 
-if(localStorage.getItem('dark-mode') === 'true'){
+if(localStorage.getItem("darkMode")==="true"){
   document.body.classList.add('dark-theme')
-  themeIcon.classList.add("bx-moon", "bx-sun")
+  themeIcon.classList.replace("bx-moon", "bx-sun")
 }else{
   document.body.classList.remove('dark-theme')
 }
-
-
-
-
 
 /*add products*/
 
@@ -64,6 +56,14 @@ const items = [
     category: 'sweatshirts',
     quantity: 20
   },
+  {
+    id: 4,
+    name: 'Sweatshirts',
+    price: 30.00,
+    image: 'https://academlo-store.netlify.app/assets/img/featured3.png',
+    category: 'sweatshirts',
+    quantity: 10
+  }
 ]
 
 
@@ -84,11 +84,7 @@ let cart = []
 
 document.addEventListener("DOMContentLoaded", () =>{
   mostrarProductos()
-
-  if(localStorage.getItem('carrito') != null){
-    mostrarProductosCart()  
-  }
- 
+  mostrarProductosCart()
 })
 
 cartIcon.addEventListener( "click", () =>{
@@ -137,16 +133,16 @@ function mostrarProductos(){
           })
           
           agregarProducto(product)
-         
+          //cart.push( product )
+          //console.log((cart))
       })
   })
 }
 
-
-
 function agregarProducto( producto ){
 
   let resultadoFind = cart.find( item => item.id === producto.id )
+  //resultadoFind = "actualizacion"
 
   if( resultadoFind ){
       let stock = cart[resultadoFind.index].quantity
@@ -171,6 +167,8 @@ function agregarProducto( producto ){
 }
 
 
+console.log(localStorage.getItem('carrito'))
+
 function mostrarProductosCart(){
 
   let fragmentoHTML = ``
@@ -189,7 +187,7 @@ function mostrarProductosCart(){
           <small>Cantidad: ${item.quantitySelected}</small>
       </div>
       `
-      console.log(item.image)
+  
       let totalProducto = item.quantitySelected * item.price 
       suma += totalProducto
 
@@ -201,15 +199,11 @@ function mostrarProductosCart(){
       <p>Productos seleccionados:${ cantidadTotal }</p>
       <p> Total: $${ suma }</p>
   </div>
-  <div><button id="comprar" type="button" onclick="realizarCompra()">Comprar</button></div>
+  <div><button id="comprar" type="button">Comprar</button></div>
   `
   cartContainer.innerHTML = fragmentoHTML
   cartCount.textContent = cantidadTotal
 }
 
-function realizarCompra(){
-  localStorage.clear();
-  alert( "Su compra se ha realizado con exito")
-  window.location.reload()
-}
+
 

@@ -428,7 +428,27 @@ footer>div>ul>li{
 
 
 .cart-item img{
-    width: 50px;
+    width: 100px;
+}
+
+
+#comprar{
+    padding: 10px 25px;
+    background-color: var(--first-color);
+    border-color: var(--first-color);
+    float: right;
+    color: white;
+    font-weight: bold;
+    margin-top: 12%; 
+    margin-right: 5%;
+}
+
+.cart-price{
+    padding: 30px 5px;
+}
+
+.cart-item{
+    padding: 10px;
 }
 
 
@@ -556,5 +576,26 @@ footer>div>ul>li{
         justify-content: center;
         gap: 50px;
         padding: 100px 30px;
+    }
+
+    /*CART*/
+
+    .cart-item img{
+        width: 90px;
+    }
+    
+    
+    #comprar{
+        float: right;
+        margin-top: 8%; 
+        margin-right: 5%;
+    }
+    
+    .cart-price{
+        padding: 20px 5px;
+    }
+    
+    .cart-item{
+        padding: 5px;
     }
 }
